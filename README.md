@@ -10,3 +10,4 @@ https://laraveldaily.teachable.com/courses/1170787/lectures/25169295
 
 In realtà ho scaricato lo zip del repo originale e poi ci ho giocato di mio finchè non lo metterò sul mio github/course
 
+Inizio lezione 4
