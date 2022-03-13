@@ -1,3 +1,4 @@
+{{--Tutto deve stare dentro un unico div/elemento in un Livewire component--}}
 <div>
     <div class="row">
         <div class="col-md-3">
@@ -16,48 +17,53 @@
                class="btn btn-primary">Add new product</a>
         </div>
     </div>
+
     <hr />
-    <table class="table">
-    <thead>
-    <tr>
-        <th>Photo</th>
-        <th>Name</th>
-        <th>Categories</th>
-        <th>Description</th>
-        <th>Stock date</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    @forelse($products as $product)
+    <div wire:loading class="alert alert-success col-md-12">
+        Caricamento dati... dovuto allo <strong>sleep(1 sec)</strong>
+    </div>
+
+    <table class="table" wire:loading.class="bg-success">
+        <thead>
         <tr>
-            <td>
-                @if ($product->photo)
-                    <img src="/storage/{{ $product->photo }}" width="50" />
-                @endif
-            </td>
-            <td>{{ $product->name }}</td>
-            <td>
-                @foreach ($product->categories as $category)
-                    {{ $category->name }}<br />
-                @endforeach
-            </td>
-            <td>{{ $product->description }}</td>
-            <td>{{ $product->stock_date }}</td>
-            <td>
-                <a class="btn btn-sm btn-primary"
-                   href="{{ route('products.edit', $product) }}">Edit</a>
-                <a onclick="return confirm('Are you sure?') || event.stopImmediatePropagation()"
-                   wire:click="deleteProduct('{{ $product->id }}')"
-                   class="btn btn-sm btn-danger" href="#">Delete</a>
-            </td>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Categories</th>
+            <th>Description</th>
+            <th>Stock date</th>
+            <th></th>
         </tr>
-    @empty
-        <tr>
-            <td colspan="3">No products found.</td>
-        </tr>
-    @endforelse
-    </tbody>
+        </thead>
+        <tbody>
+        @forelse($products as $product)
+            <tr>
+                <td>
+                    @if ($product->photo)
+                        <img src="/storage/{{ $product->photo }}" width="50" />
+                    @endif
+                </td>
+                <td>{{ $product->name }}</td>
+                <td>
+                    @foreach ($product->categories as $category)
+                        {{ $category->name }}<br />
+                    @endforeach
+                </td>
+                <td>{{ $product->description }}</td>
+                <td>{{ $product->stock_date }}</td>
+                <td>
+                    <a class="btn btn-sm btn-primary"
+                       href="{{ route('products.edit', $product) }}">Edit</a>
+                    <a onclick="return confirm('Are you sure?') || event.stopImmediatePropagation()"
+                       wire:click="deleteProduct('{{ $product->id }}')"
+                       class="btn btn-sm btn-danger" href="#">Delete</a>
+                </td>
+            </tr>
+        @empty
+            <tr>
+                <td colspan="3">No products found.</td>
+            </tr>
+        @endforelse
+        </tbody>
     </table>
     {{ $products->links() }}
 </div>

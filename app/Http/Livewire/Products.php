@@ -15,7 +15,7 @@ class Products extends Component
     public $searchQuery;
     public $searchCategory;
 
-    protected $paginationTheme = 'bootstrap';
+    protected $paginationTheme = 'bootstrap'; // default per Livewire: Tailwind
 
     public function mount()
     {
@@ -26,6 +26,8 @@ class Products extends Component
 
     public function render()
     {
+        sleep(1); // per simulare un caricamento lento
+
         $products = Product::with('categories')
             ->when($this->searchQuery != '', function($query) {
                 $query->where('name', 'like', '%'.$this->searchQuery.'%');
