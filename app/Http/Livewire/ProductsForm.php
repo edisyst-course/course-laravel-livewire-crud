@@ -14,7 +14,7 @@ class ProductsForm extends Component
     public $categories;
     public Product $product; // binding del Model Product come property del Livewire Component Products
     public $productCategories; // per gestire la select multipla e il Many To Many
-    public $photo;
+    public $photo; // come per le categorie, è una proprietà di cui mi occupo separatamente in un secondo momento
 
     protected $rules = [
         'product.name' => 'required|min:5',

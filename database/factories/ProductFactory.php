@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Carbon;
 
 class ProductFactory extends Factory
 {
@@ -26,6 +27,9 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->name,
             'description' => $this->faker->text(50),
+//            'stock_date'  => Carbon::create('2000','10','5'),
+//            'stock_date'  => new Carbon($this->faker->dateTimeBetween('-3 years', '-3 days')), // Stocked between 3 years ago and now.
+
         ];
     }
 }

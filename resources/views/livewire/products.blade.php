@@ -50,9 +50,8 @@
                 <td>{{ $product->description }}</td>
                 <td>{{ $product->stock_date }}</td>
                 <td>
-                    <a class="btn btn-sm btn-primary"
-                       href="{{ route('products.edit', $product) }}">Edit</a>
-                    <a onclick="return confirm('Sei sicuro? Si usa event.stopImmediatePropagation') || event.stopImmediatePropagation()"
+                    <a class="btn btn-sm btn-primary" href="{{ route('products.edit', $product) }}">Edit</a>
+                    <a onclick="return confirm('Sicuro? Si usa event.stopImmediatePropagation') || event.stopImmediatePropagation()"
                        wire:click="deleteProduct('{{ $product->id }}')"
                        class="btn btn-sm btn-danger" href="#">Delete</a>
                 </td>

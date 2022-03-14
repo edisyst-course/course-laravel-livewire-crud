@@ -13,4 +13,5 @@ Così vedrò le immagini dei prod nuovi che inserisco, volendo posso perfezionar
 
 In realtà ho scaricato lo zip del repo originale e poi ci ho giocato di mio finchè non lo metterò sul mio github/course
 
-Inizio lezione 4
+
+Vorrei aggiungere nel seeder la data stock_date con Carbon, e volendo anche delle immagini di test in una cartella assets che metto nel proj

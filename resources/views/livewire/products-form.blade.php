@@ -59,8 +59,7 @@
 
         <div class="col-md-6">
             @foreach (\App\Models\Product::COLORS_LIST as $key => $value)
-                <input wire:model="product.color"
-                       type="radio" value="{{ $key }}" /> {{ $value }}<br />
+                <input wire:model="product.color" type="radio" value="{{ $key }}" /> {{ $value }}<br />
             @endforeach
             @error('product.color')
                 <span class="invalid-feedback" role="alert">
@@ -75,8 +74,7 @@
                class="col-md-4 col-form-label text-md-right"></label>
 
         <div class="col-md-6">
-            <input wire:model="product.in_stock"
-                   type="checkbox" value="1" /> In stock
+            <input wire:model="product.in_stock" type="checkbox" value="1" /> In stock
             @error('product.in_stock')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -104,8 +102,7 @@
         <label for="photo" class="col-md-4 col-form-label text-md-right">{{ __('Photo') }}</label>
 
         <div class="col-md-6">
-            <input wire:model.defer="photo" type="file"
-                   class="@error('photo') is-invalid @enderror">
+            <input wire:model.defer="photo" type="file" class="@error('photo') is-invalid @enderror">
 
             @error('photo')
                 <span class="invalid-feedback" role="alert">
