@@ -12,8 +12,8 @@ class ProductsForm extends Component
     use WithFileUploads;
 
     public $categories;
-    public Product $product;
-    public $productCategories;
+    public Product $product; // binding del Model Product come property del Livewire Component Products
+    public $productCategories; // per gestire la select multipla e il Many To Many
     public $photo;
 
     protected $rules = [
@@ -26,14 +26,15 @@ class ProductsForm extends Component
         'photo' => 'image',
     ];
 
-    protected $validationAttributes = [
+    //protected $messages = ['productCategories.required' => 'Categorie obbligatorie']
+    protected $validationAttributes = [ // modifico il nome del field nell'error-message e non serve $messages
         'productCategories' => 'Categories'
     ];
 
     public function mount(Product $product)
     {
         $this->categories = Category::all();
-        $this->product = $product ?? new Product();
+        $this->product = $product ?? new Product(); // binding del Model Product come property del Livewire Component Products
         $this->productCategories = $this->product->categories()->pluck('id');
     }
 
@@ -50,12 +51,12 @@ class ProductsForm extends Component
         $this->product->photo = $filename;
 
         $this->product->save();
-        $this->product->categories()->sync($this->productCategories);
+        $this->product->categories()->sync($this->productCategories); // metodo x Many To Many
 
         return redirect()->route('products.index');
     }
 
-    public function updatedProductName()
+    public function updatedProductName() // validazione in live time
     {
         $this->validateOnly('product.name');
     }

@@ -10,9 +10,9 @@
                    required autocomplete="name" autofocus>
 
             @error('product.name')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
             @enderror
         </div>
     </div>
@@ -26,9 +26,9 @@
                       class="form-control @error('product.description') is-invalid @enderror"></textarea>
 
             @error('product.description')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
             @enderror
         </div>
     </div>
@@ -46,9 +46,9 @@
                 @endforeach
             </select>
             @error('productCategories')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
             @enderror
         </div>
     </div>
@@ -63,9 +63,9 @@
                        type="radio" value="{{ $key }}" /> {{ $value }}<br />
             @endforeach
             @error('product.color')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
             @enderror
         </div>
     </div>
@@ -78,9 +78,9 @@
             <input wire:model="product.in_stock"
                    type="checkbox" value="1" /> In stock
             @error('product.in_stock')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
             @enderror
         </div>
     </div>
@@ -93,9 +93,9 @@
                    class="form-control @error('product.stock_date') is-invalid @enderror">
 
             @error('product.stock_date')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
             @enderror
         </div>
     </div>
@@ -108,9 +108,9 @@
                    class="@error('photo') is-invalid @enderror">
 
             @error('photo')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
             @enderror
         </div>
     </div>

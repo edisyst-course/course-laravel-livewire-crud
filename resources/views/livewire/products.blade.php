@@ -13,8 +13,7 @@
             </select>
         </div>
         <div class="col-md-6 text-right">
-            <a href="{{ route('products.create') }}"
-               class="btn btn-primary">Add new product</a>
+            <a href="{{ route('products.create') }}" class="btn btn-primary">Add new product</a>
         </div>
     </div>
 
@@ -25,14 +24,14 @@
 
     <table class="table" wire:loading.class="bg-success">
         <thead>
-        <tr>
-            <th>Photo</th>
-            <th>Name</th>
-            <th>Categories</th>
-            <th>Description</th>
-            <th>Stock date</th>
-            <th></th>
-        </tr>
+            <tr>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Categories</th>
+                <th>Description</th>
+                <th>Stock date</th>
+                <th></th>
+            </tr>
         </thead>
         <tbody>
         @forelse($products as $product)
@@ -53,7 +52,7 @@
                 <td>
                     <a class="btn btn-sm btn-primary"
                        href="{{ route('products.edit', $product) }}">Edit</a>
-                    <a onclick="return confirm('Are you sure?') || event.stopImmediatePropagation()"
+                    <a onclick="return confirm('Sei sicuro? Si usa event.stopImmediatePropagation') || event.stopImmediatePropagation()"
                        wire:click="deleteProduct('{{ $product->id }}')"
                        class="btn btn-sm btn-danger" href="#">Delete</a>
                 </td>
