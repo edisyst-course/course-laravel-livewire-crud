@@ -37,6 +37,7 @@ class Products extends Component
                     $query2->where('id', $this->searchCategory);
                 });
             })
+            ->latest()
             ->paginate(10);
 
         return view('livewire.products', [

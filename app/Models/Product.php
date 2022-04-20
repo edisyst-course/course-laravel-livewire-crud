@@ -30,7 +30,7 @@ class Product extends Model
         return $this->belongsToMany(Category::class);
     }
 
-    public function getStockDateAttribute()
+    public function getStockDateAttribute() // scritto così è riferito a stock_date
     {
         if (!$this->attributes['stock_date']) {
             return '';

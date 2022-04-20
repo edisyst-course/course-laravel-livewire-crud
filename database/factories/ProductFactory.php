@@ -23,13 +23,10 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
-        $categories = Category::all();
         return [
             'name' => $this->faker->name,
             'description' => $this->faker->text(50),
-//            'stock_date'  => Carbon::create('2000','10','5'),
-//            'stock_date'  => new Carbon($this->faker->dateTimeBetween('-3 years', '-3 days')), // Stocked between 3 years ago and now.
-
+            'stock_date'  => $this->faker->dateTimeBetween('-3 years', '-3 days')->format('m/d/Y'),
         ];
     }
 }
